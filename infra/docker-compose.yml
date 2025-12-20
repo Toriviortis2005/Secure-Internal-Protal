@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: sip_db
+    environment:
+      POSTGRES_USER: sip
+      POSTGRES_PASSWORD: sip_password
+      POSTGRES_DB: sip_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - sip_pgdata:/var/lib/postgresql/data
+
+volumes:
+  sip_pgdata:
